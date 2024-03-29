@@ -29,3 +29,8 @@ Para poder usar este proyecto en local, sigue estos pasos:
 * Clona el repositorio
 * Instala las dependencias con `npm i`
 * Arranca el proyecto con `npm run dev`
+
+***
+### Pruebas
+
+Algunas pruebas pueden ser vistas dentro del directorio test, las cuales pueden ser ejecutadas con `npm run test`
