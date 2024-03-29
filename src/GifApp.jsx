@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GifGrid, GifSearch, Title } from "./components";
 
-function App() {
+function GifApp() {
   const [searchValue, setSearchValue] = useState([]);
 
   const handleNewSearchValue = (newSearchValue) => {
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default GifApp;

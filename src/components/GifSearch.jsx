@@ -1,18 +1,30 @@
 import { useState } from "react"
+import PropTypes from 'prop-types'
 
 export const GifSearch = ({ onNewSearchValue }) => {
 
     const [search, setSearch] = useState('')
 
+    const onInputChange = ({ target }) => {
+        setSearch(target.value)
+    }
+
     const onSubmitedForm = (e) => {
         e.preventDefault()
-        onNewSearchValue(search)
+
+        if (search.trim().length <= 1) return;
+        
+        onNewSearchValue(search.trim())
         setSearch('')
     }
     
     return (
-        <form onSubmit={onSubmitedForm}>
-            <input value={search} onChange={e => setSearch(e.target.value)} />
+        <form onSubmit={onSubmitedForm} aria-label="form">
+            <input type="text" value={search} onChange={onInputChange} />
         </form>
     )
+}
+
+GifSearch.propTypes = {
+    onNewSearchValue: PropTypes.func.isRequired
 }
